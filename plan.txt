@@ -1,9 +1,12 @@
 Parts:
 1. main
 2. display render
+    The idea is, that using python and ANSI Escape codes I create a simple terminal game.
+
 3. menu 
 4. game logic
+5. game navigation
+    The snake game needs arrow inputs and pause for menu.
 
 
 
-The idea is, that using python and ANSI Escape codes I create a simple terminal game.
