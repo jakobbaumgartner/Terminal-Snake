@@ -1,0 +1,9 @@
+Parts:
+1. main
+2. display render
+3. menu 
+4. game logic
+
+
+
+The idea is, that using python and ANSI Escape codes I create a simple terminal game.
