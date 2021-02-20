@@ -49,6 +49,8 @@ class Snake:
 
        self.body.insert(0,[ycoord,xcoord,0]) # add an element (HEAD) to the beginning
 
+
+
     def ChangeDirection(self, pressed_key):
         # reads the input and converts it to change in direction
 
@@ -64,4 +66,7 @@ class Snake:
         if (pressed_key == 'd' and self.direction != 2):
             self.direction = 3
 
-            
+    
+    def Grow(self):
+        # if the snake grows, the removed element should be added back to it
+        self.body.append(self.removed)

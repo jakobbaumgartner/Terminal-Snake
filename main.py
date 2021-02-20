@@ -22,6 +22,7 @@ canvas.DisplaySnake(anaconda.body, anaconda.removed)
 #Game loop
 while(True):
     anaconda.SnakeMove() # move snake for a step
+   
     time.sleep(0.1)
     canvas.DisplaySnake(anaconda.body, anaconda.removed) # update display
     
