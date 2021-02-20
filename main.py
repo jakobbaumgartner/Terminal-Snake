@@ -24,5 +24,9 @@ while(True):
     anaconda.SnakeMove()
     time.sleep(0.1)
     canvas.DisplaySnake(anaconda.body, anaconda.removed)
-    input_key = msvcrt.getch()
-    anaconda.ChangeDirection(input_key.decode('utf-8'))
+    
+
+    if msvcrt.kbhit():
+       input_key = msvcrt.getch()
+       anaconda.ChangeDirection(input_key.decode('utf-8'))
+    
