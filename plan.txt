@@ -10,4 +10,8 @@ Parts:
 
 
 
-
+Tasks:
+1. snake move function
+    - remove the last element 👍
+    - change the type of the first element to BODY 👍
+    - add an element type HEAD to the beginning ( in the chosen DIRECTION) 👍

@@ -1,10 +1,8 @@
 # 2D terminal canvas render
 class Display:
 
-    size = 32
-
+    size = 32 # size of board (size x size)
  
-
     def erase (self):
         # go to the top of the terminal and erase the entire screen
 
@@ -14,7 +12,7 @@ class Display:
 
     def displayboard (self):
         # display empty board on the screen
-        
+
          height = self.size
          width = self.size
  

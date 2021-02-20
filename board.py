@@ -1,17 +1,3 @@
-def createboard(x, y):
-    board = []
-    row = []
-    
-    for elementx in range(x):
-        row.append("  ")
-    for elementy in range(y):
-        board.append(row)
-    
-    return board 
-
-def displayboard(board): 
-   
-
 def displaysnake (body):
     # we draw every element of the body on the board
 

@@ -13,20 +13,24 @@ canvas = display.Display() # initialize display class
 # -------------------------------------------------------------------------------------------------------------------
 
 
-canvas.erase()
-canvas.displayboard() 
+# canvas.erase()
+# canvas.displayboard() 
+
+print(anaconda.body)
+anaconda.SnakeMove()
+print(anaconda.body)
 
 
 
 
-while(True):
+# while(True):
     
-    time.sleep(1)
+#     time.sleep(1)
 
   
 
    
 
-    print("\033[{};{}f%".format(10, 0))
+#     print("\033[{};{}f%".format(10, 0))
      
-    # anaconda.direction = msvcrt.getch()
+#     # anaconda.direction = msvcrt.getch()
