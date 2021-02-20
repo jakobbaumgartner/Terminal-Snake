@@ -1,8 +1,11 @@
-# 2D terminal canvas render
+
+import random 
+
 class Display:
 
     size = 32 # size of board (size x size)
     border_coordinates = [] # list of border coordinates, to detect crossings
+    food = [5,5,1] # food on the border, 1 - exists, 0 - eaten
 
     def __init__(self):
         # runs on new object initialization
@@ -24,11 +27,6 @@ class Display:
             self.border_coordinates.append([element+4,4+2*self.size])
 
         
-
-
-
-
-
  
     def Erase (self):
         # go to the top of the terminal and erase the entire screen
@@ -90,10 +88,59 @@ class Display:
         print("\033[{};0H".format(self.size+5))
 
     def BorderCrossing(self, body):
-        # print(body)
-        # print(self.border_coordinates)
+       # detects if border has been crossed, if it has, it returns True, else False
+        crossing_status = False
+
         for element in self.border_coordinates:
             if(body[0][0] == element[0] and body[0][1] == element[1]):
-                print("COROSSEEED")
+                crossing_status =  True
+            
+        return crossing_status
+
+
+    def SpawnFood(self, body):
+        # any time it is called it spawns food somewhere on the board, but not on top of the snake
+        # and displays it
+
+        generateagain = 1 
+
+        while(generateagain == 1): # if food is not on the right place we try generating it again
+            generateagain = 0 
+            self.food = [random.randint(5,self.size+2), random.randint(6,2+self.size*2), 1] # display food, not close to border
+
+            for element in body: # if on top of snake, try again
+                if (self.food[0] == element[0] and self.food[1] == element[1]):
+                    generateagain = 1
+            if (self.food[0] == element[0]+1 and self.food[1] == element[1]):  # if too close to head try again
+                 generateagain = 1
+            if (self.food[0] == element[0]-1 and self.food[1] == element[1]):  # if too close to head try again
+                generateagain = 1
+            if (self.food[0] == element[0] and self.food[1] == element[1]+1):  # if too close to head try again
+                generateagain = 1
+            if (self.food[0] == element[0] and self.food[1] == element[1]-1):  # if too close to head try again
+                generateagain = 1
+
+
+        print("\033[{};{}HX".format(self.food[0],self.food[1]),end="") # display food
+
+
+    def EatFood(self, body):
+        # if we eat food, we generate new one and return True
+        print("\033[{};{}HX".format(self.food[0],self.food[1]),end="") # display food
+        
+        if(body[0][0] == self.food[0] and body[0][1] == self.food[1]):
+            self.SpawnFood(body)
+
+            return True
+
         else:
-            print("                  ")
+             return False
+
+
+        
+
+
+
+        
+       
+

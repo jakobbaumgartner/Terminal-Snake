@@ -20,4 +20,15 @@ Tasks:
     - draw new and existing elements
     - remove last element
 
-3. 
+3. spawn food
+    - spawn food inside the field
+    - not on top of snake
+
+4. eat food
+    - if head is on coordinates of food, it gets eaten
+    - if it is eaten, return TRUE
+    - spawen new food location
+
+5. Border crossing
+    - we generate a frame of forbidden locations
+    - if we crossed location, we get returned True
