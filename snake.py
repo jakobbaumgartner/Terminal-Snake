@@ -77,3 +77,9 @@ class Snake:
                 status_crossing = True
 
         return status_crossing
+
+
+    def NewGame(self):
+        self.body = [[10,10,0],[11,10,1],[12,10,1],[13,10,1]]
+        self.removed = [] # saves removed element
+        self.direction = 3 # direction of moving of the snake

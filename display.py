@@ -192,13 +192,15 @@ class Display:
         
         return newcolor
         
+
     def DisplayScore(self):
          print("\033[5;{}HPOINTS:".format(self.size*2 + 8),end="") # display score
          print("\033[7;{}H{}".format(self.size*2 + 8, self.score),end="") # display score
          print("\033[{};0H".format(self.size+5))
      
-
-
+    def NewGame(self):
         
-       
+        food = [5,5,1] # food on the border, 1 - exists, 0 - eaten
+        color = 2
+        score = 0 # score of the game
 
