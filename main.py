@@ -21,12 +21,12 @@ canvas.DisplaySnake(anaconda.body, anaconda.removed)
 
 #Game loop
 while(True):
-    anaconda.SnakeMove()
+    anaconda.SnakeMove() # move snake for a step
     time.sleep(0.1)
-    canvas.DisplaySnake(anaconda.body, anaconda.removed)
+    canvas.DisplaySnake(anaconda.body, anaconda.removed) # update display
     
 
-    if msvcrt.kbhit():
+    if msvcrt.kbhit(): # check if input was given, if it was ... change direction
        input_key = msvcrt.getch()
        anaconda.ChangeDirection(input_key.decode('utf-8'))
     

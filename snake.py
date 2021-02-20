@@ -52,16 +52,16 @@ class Snake:
     def ChangeDirection(self, pressed_key):
         # reads the input and converts it to change in direction
 
-        if (pressed_key == 'w'):
+        if (pressed_key == 'w' and self.direction != 1):
             self.direction = 0
 
-        if (pressed_key == 's'):
+        if (pressed_key == 's' and self.direction != 0):
             self.direction = 1
 
-        if (pressed_key == 'a'):
+        if (pressed_key == 'a' and self.direction != 3):
             self.direction = 2
         
-        if (pressed_key == 'd'):
+        if (pressed_key == 'd' and self.direction != 2):
             self.direction = 3
 
             

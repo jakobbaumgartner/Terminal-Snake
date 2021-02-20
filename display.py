@@ -18,7 +18,7 @@ class Display:
  
 
         # display board with border:
-         print("")
+         print("                -------- A PYTHON SNAKE GAME -------- ")
          print("  ", end="")
 
         # display top border
