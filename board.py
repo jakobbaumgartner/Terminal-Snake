@@ -10,28 +10,7 @@ def createboard(x, y):
     return board 
 
 def displayboard(board): 
-    height = len(board)
-    width = len(board[0])
-    # print(width)
-
-    # display board with border:
-    print("")
-    print("  ",end="")
-    for elementx in range(width+1):
-        print("##",end="")
-    print("")
-    for elementy in range(height):
-        print("  #", end="")
-        
-        for elementx in range(width):
-         
-            print(board[elementy][elementx], end="")
-            if elementx == width-1:
-                print("#",end="")
-        print("")
-    print("  ",end="")
-    for elementx in range(width+1):
-        print("##",end="")
+   
 
 def displaysnake (body):
     # we draw every element of the body on the board
@@ -43,3 +22,4 @@ def displaysnake (body):
             print("\033[{};{}fo".format(element[0], element[1]))
     
     print("\033[65;0f")
+

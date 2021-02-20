@@ -1,21 +1,32 @@
-import display
-import board
 import os
 os.system('') # to enable ANSI escape codes in CMD
 import time
+import msvcrt
+# backup -> if program should run on linux, change for: https://pypi.org/project/getch/
+
+import display
 import snake
 
-cobra = snake.Snake
-display.erase()
-playingboard = board.createboard(60,60)
-board.displayboard(playingboard)
-# print("\033[15;16f hello")
-# print("\033[65;0f hello")
-# \033[<L>;<C>H
+anaconda = snake.Snake() # initialize snake class
+canvas = display.Display() # initialize display class
 
-bitline = 5
-bitcollumn = 5
-itter = 0
+# -------------------------------------------------------------------------------------------------------------------
 
-board.displaysnake(cobra.body)
 
+canvas.erase()
+canvas.displayboard() 
+
+
+
+
+while(True):
+    
+    time.sleep(1)
+
+  
+
+   
+
+    print("\033[{};{}f%".format(10, 0))
+     
+    # anaconda.direction = msvcrt.getch()
