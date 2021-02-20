@@ -15,3 +15,9 @@ Tasks:
     - remove the last element 👍
     - change the type of the first element to BODY 👍
     - add an element type HEAD to the beginning ( in the chosen DIRECTION) 👍
+
+2. display snake
+    - draw new and existing elements
+    - remove last element
+
+3. 

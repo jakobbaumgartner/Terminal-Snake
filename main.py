@@ -10,6 +10,8 @@ import snake
 anaconda = snake.Snake() # initialize snake class
 canvas = display.Display() # initialize display class
 
+input_key = "b'd'"
+
 # -------------------------------------------------------------------------------------------------------------------
 
 canvas.Erase()
@@ -22,11 +24,5 @@ while(True):
     anaconda.SnakeMove()
     time.sleep(0.1)
     canvas.DisplaySnake(anaconda.body, anaconda.removed)
-
-    # anaconda.direction = msvcrt.getch()
-
-#     anaconda.SnakeMove()
-#     canvas.DisplaySnake(anaconda.body)
-  
-     
-    # anaconda.direction = msvcrt.getch()
+    input_key = msvcrt.getch()
+    anaconda.ChangeDirection(input_key.decode('utf-8'))

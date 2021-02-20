@@ -48,3 +48,20 @@ class Snake:
            xcoord = ((self.body[0])[1] + 1) # x - coord is for one shifted to the right
 
        self.body.insert(0,[ycoord,xcoord,0]) # add an element (HEAD) to the beginning
+
+    def ChangeDirection(self, pressed_key):
+        # reads the input and converts it to change in direction
+
+        if (pressed_key == 'w'):
+            self.direction = 0
+
+        if (pressed_key == 's'):
+            self.direction = 1
+
+        if (pressed_key == 'a'):
+            self.direction = 2
+        
+        if (pressed_key == 'd'):
+            self.direction = 3
+
+            
