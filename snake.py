@@ -1,8 +1,5 @@
 class Snake:
 
-
-    # location = [25,25] # current location of the head of the snake
-
     direction = 3 # direction of moving of the snake
     # 0 - up
     # 1 - down

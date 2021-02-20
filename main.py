@@ -26,6 +26,7 @@ while(True):
     time.sleep(0.1)
     canvas.DisplaySnake(anaconda.body, anaconda.removed) # update display
     
+    canvas.BorderCrossing(anaconda.body)
 
     if msvcrt.kbhit(): # check if input was given, if it was ... change direction
        input_key = msvcrt.getch()

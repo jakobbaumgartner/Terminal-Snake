@@ -2,6 +2,33 @@
 class Display:
 
     size = 32 # size of board (size x size)
+    border_coordinates = [] # list of border coordinates, to detect crossings
+
+    def __init__(self):
+        # runs on new object initialization
+        
+        # add top border
+        for element in range(self.size*2+4):
+            self.border_coordinates.append([3,element+1])
+
+        # add bottom border
+        for element in range(self.size*2+4):
+            self.border_coordinates.append([4+self.size,element+1])
+
+        # add left border
+        for element in range(self.size):
+            self.border_coordinates.append([element+4,3])
+
+        # add right border
+        for element in range(self.size):
+            self.border_coordinates.append([element+4,4+2*self.size])
+
+        
+
+
+
+
+
  
     def Erase (self):
         # go to the top of the terminal and erase the entire screen
@@ -61,3 +88,12 @@ class Display:
             print("\033[{};{}H ".format(removed[0],removed[1]),end="")
         
         print("\033[{};0H".format(self.size+5))
+
+    def BorderCrossing(self, body):
+        # print(body)
+        # print(self.border_coordinates)
+        for element in self.border_coordinates:
+            if(body[0][0] == element[0] and body[0][1] == element[1]):
+                print("COROSSEEED")
+        else:
+            print("                  ")
