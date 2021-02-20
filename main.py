@@ -17,25 +17,13 @@ canvas.DisplayBoard()
 
 canvas.DisplaySnake(anaconda.body, anaconda.removed)
 
-anaconda.SnakeMove()
-canvas.DisplaySnake(anaconda.body, anaconda.removed)
+#Game loop
+while(True):
+    anaconda.SnakeMove()
+    time.sleep(0.1)
+    canvas.DisplaySnake(anaconda.body, anaconda.removed)
 
-anaconda.SnakeMove()
-canvas.DisplaySnake(anaconda.body, anaconda.removed)
-
-anaconda.SnakeMove()
-canvas.DisplaySnake(anaconda.body, anaconda.removed)
-
-anaconda.SnakeMove()
-canvas.DisplaySnake(anaconda.body, anaconda.removed)
-
-anaconda.SnakeMove()
-canvas.DisplaySnake(anaconda.body, anaconda.removed)
-
-
-# while(True):
-    
-#     # time.sleep(1)
+    # anaconda.direction = msvcrt.getch()
 
 #     anaconda.SnakeMove()
 #     canvas.DisplaySnake(anaconda.body)
