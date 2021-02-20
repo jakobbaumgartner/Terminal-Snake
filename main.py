@@ -19,6 +19,10 @@ canvas = display.Display() # initialize display class
 print(anaconda.body)
 anaconda.SnakeMove()
 print(anaconda.body)
+anaconda.SnakeMove()
+print(anaconda.body)
+anaconda.SnakeMove()
+print(anaconda.body)
 
 
 

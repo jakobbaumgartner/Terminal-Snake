@@ -30,11 +30,11 @@ class Snake:
        (self.body[0])[2] = 1
 
        if self.direction == 0: 
-           ycoord = ((self.body[0])[1] - 1) # when moving up, we decrease y - coord by one
+           ycoord = ((self.body[0])[0] - 1) # when moving up, we decrease y - coord by one
            xcoord = (self.body[0])[1] # x - coord is the same as elements before it
 
        if self.direction == 1: 
-           ycoord = ((self.body[0])[1] + 1) # when moving down, we increase y - coord by one
+           ycoord = ((self.body[0])[0] + 1) # when moving down, we increase y - coord by one
            xcoord = (self.body[0])[1] # x - coord is the same as elements before it
 
        if self.direction == 2:
