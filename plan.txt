@@ -32,3 +32,6 @@ Tasks:
 5. Border crossing
     - we generate a frame of forbidden locations
     - if we crossed location, we get returned True
+
+6. Tail crossing
+    - head on tail - dies

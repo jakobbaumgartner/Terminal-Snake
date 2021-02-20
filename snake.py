@@ -6,7 +6,7 @@ class Snake:
     # 2 - left
     # 3 - right
 
-    body = [[25,25,0],[26,25,1],[27,25,1],[28,25,1]]
+    body = [[10,10,0],[11,10,1],[12,10,1],[13,10,1]]
     #[y,x,element_type]
     # element type:
     # 0 - head
@@ -67,3 +67,13 @@ class Snake:
     def Grow(self):
         # if the snake grows, the removed element should be added back to it
         self.body.append(self.removed)
+
+    def SelfCrossing(self):
+        # if snake eats into its own body, it dies
+        status_crossing = False
+
+        for index, element in enumerate(self.body):
+            if (index != 0 and element[0] == self.body[0][0] and element[1] == self.body[0][1]): 
+                status_crossing = True
+
+        return status_crossing

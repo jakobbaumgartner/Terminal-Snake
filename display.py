@@ -1,11 +1,14 @@
 
 import random 
+import os
 
 class Display:
 
     size = 32 # size of board (size x size)
     border_coordinates = [] # list of border coordinates, to detect crossings
     food = [5,5,1] # food on the border, 1 - exists, 0 - eaten
+    color = 2
+    score = 0 # score of the game
 
     def __init__(self):
         # runs on new object initialization
@@ -102,6 +105,8 @@ class Display:
         # any time it is called it spawns food somewhere on the board, but not on top of the snake
         # and displays it
 
+        os.system('color 0{}'.format(self.GenerateColor()))
+
         generateagain = 1 
 
         while(generateagain == 1): # if food is not on the right place we try generating it again
@@ -126,19 +131,72 @@ class Display:
 
     def EatFood(self, body):
         # if we eat food, we generate new one and return True
-        print("\033[{};{}HX".format(self.food[0],self.food[1]),end="") # display food
-        
+
+              
         if(body[0][0] == self.food[0] and body[0][1] == self.food[1]):
             self.SpawnFood(body)
+      
+            self.score += 1        # increase score by one point
 
             return True
 
         else:
              return False
 
+    def GenerateColor(self):
+        #just changes color to random other color
 
+        newcolor = random.randint(0,15)
+
+        if(newcolor == 10):
+            newcolor = 'A'
         
+        if(newcolor == 11):
+            newcolor = 'B'
 
+        if(newcolor == 12):
+            newcolor = 'C'
+
+        if(newcolor == 13):
+            newcolor = 'D'    
+        
+        if(newcolor == 14):
+            newcolor = 'E'
+
+        if(newcolor == 15):
+            newcolor = 'F'
+
+        while(newcolor == self.color or newcolor == 8):
+            
+            newcolor = random.randint(0,15)
+
+            if(newcolor == 10):
+                newcolor = 'A'
+            
+            if(newcolor == 11):
+                newcolor = 'B'
+
+            if(newcolor == 12):
+                newcolor = 'C'
+
+            if(newcolor == 13):
+                newcolor = 'D'    
+            
+            if(newcolor == 14):
+                newcolor = 'E'
+
+            if(newcolor == 15):
+                newcolor = 'F'
+        
+        self.color = newcolor
+        
+        return newcolor
+        
+    def DisplayScore(self):
+         print("\033[5;{}HPOINTS:".format(self.size*2 + 8),end="") # display score
+         print("\033[7;{}H{}".format(self.size*2 + 8, self.score),end="") # display score
+         print("\033[{};0H".format(self.size+5))
+     
 
 
         
