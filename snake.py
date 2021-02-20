@@ -3,7 +3,7 @@ class Snake:
 
     # location = [25,25] # current location of the head of the snake
 
-    direction = 0 # direction of moving of the snake
+    direction = 3 # direction of moving of the snake
     # 0 - up
     # 1 - down
     # 2 - left
@@ -15,6 +15,8 @@ class Snake:
     # 0 - head
     # 1 - body
 
+    removed = [] # saves removed element
+
    
     def SnakeMove (self):
        # snake moves in the direction that was chosen
@@ -25,7 +27,7 @@ class Snake:
     # - add an element type HEAD to the beginning ( in the chosen DIRECTION) 
 
 
-       self.body.pop() #remove the last element
+       self.removed = self.body.pop() #remove the last element
 
        (self.body[0])[2] = 1
 

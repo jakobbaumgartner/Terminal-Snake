@@ -12,29 +12,33 @@ canvas = display.Display() # initialize display class
 
 # -------------------------------------------------------------------------------------------------------------------
 
+canvas.Erase()
+canvas.DisplayBoard()
 
-# canvas.erase()
-# canvas.displayboard() 
+canvas.DisplaySnake(anaconda.body, anaconda.removed)
 
-print(anaconda.body)
 anaconda.SnakeMove()
-print(anaconda.body)
-anaconda.SnakeMove()
-print(anaconda.body)
-anaconda.SnakeMove()
-print(anaconda.body)
+canvas.DisplaySnake(anaconda.body, anaconda.removed)
 
+anaconda.SnakeMove()
+canvas.DisplaySnake(anaconda.body, anaconda.removed)
 
+anaconda.SnakeMove()
+canvas.DisplaySnake(anaconda.body, anaconda.removed)
+
+anaconda.SnakeMove()
+canvas.DisplaySnake(anaconda.body, anaconda.removed)
+
+anaconda.SnakeMove()
+canvas.DisplaySnake(anaconda.body, anaconda.removed)
 
 
 # while(True):
     
-#     time.sleep(1)
+#     # time.sleep(1)
 
+#     anaconda.SnakeMove()
+#     canvas.DisplaySnake(anaconda.body)
   
-
-   
-
-#     print("\033[{};{}f%".format(10, 0))
      
-#     # anaconda.direction = msvcrt.getch()
+    # anaconda.direction = msvcrt.getch()
