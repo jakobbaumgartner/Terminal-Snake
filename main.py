@@ -3,11 +3,14 @@ os.system('') # to enable ANSI escape codes in CMD
 import time
 import msvcrt
 import random
+import json
+import time
 # backup -> if program should run on linux, change for: https://pypi.org/project/getch/
 
 import display
 import snake
 import menu
+import save
 
 anaconda = snake.Snake() # initialize snake class
 canvas = display.Display() # initialize display class
@@ -19,7 +22,6 @@ program_status = True # while program runs
 display_note = ""
 
 # -------------------------------------------------------------------------------------------------------------------
-
 
 
 while(program_status):
@@ -38,6 +40,13 @@ while(program_status):
         
         canvas.Erase() # clear screen
         canvas.DisplayBoard() # display board
+        print("\033[{};{}HEnter username:".format(int(canvas.size/2),canvas.size-2),end="") # display game over
+        print("\033[{};0H".format(canvas.size+5)) # move to the bottom of the screen
+        canvas.name = input()
+
+        canvas.Erase() # clear screen
+        canvas.DisplayBoard() # display board
+
         canvas.SpawnFood(anaconda.body) # spawn food
         canvas.DisplaySnake(anaconda.body, anaconda.removed) # display snake
 

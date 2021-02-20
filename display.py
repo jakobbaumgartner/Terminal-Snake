@@ -9,6 +9,7 @@ class Display:
     food = [5,5,1] # food on the border, 1 - exists, 0 - eaten
     color = 2
     score = 0 # score of the game
+    name = ''
 
     def __init__(self):
         # runs on new object initialization
@@ -196,11 +197,15 @@ class Display:
     def DisplayScore(self):
          print("\033[5;{}HPOINTS:".format(self.size*2 + 8),end="") # display score
          print("\033[7;{}H{}".format(self.size*2 + 8, self.score),end="") # display score
+         print("\033[10;{}HNAME:".format(self.size*2 + 8),end="") # display name
+         print("\033[12;{}H{}".format(self.size*2 + 8, self.name),end="") # display name
+
          print("\033[{};0H".format(self.size+5))
      
     def NewGame(self):
         
-        food = [5,5,1] # food on the border, 1 - exists, 0 - eaten
-        color = 2
-        score = 0 # score of the game
+        self.food = [5,5,1] # food on the border, 1 - exists, 0 - eaten
+        self.color = 2
+        self.score = 0 # score of the game
+        self.name = 'empty'
 
