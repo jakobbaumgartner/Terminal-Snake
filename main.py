@@ -5,6 +5,8 @@ import msvcrt
 import random
 import json
 import time
+import operator
+
 # backup -> if program should run on linux, change for: https://pypi.org/project/getch/
 
 import display
@@ -35,6 +37,9 @@ while(program_status):
 
         if(input_key == '1'):
             gamemenu.mode = 1
+        
+        if(input_key == '2'):
+            gamemenu.mode = 2
     
     if (gamemenu.mode == 1):
         
@@ -77,13 +82,22 @@ while(program_status):
         print("\033[{};0H".format(canvas.size+5)) # move to the bottom of the screen
         canvas.DisplayScore()
 
-        print("\033[{};{}HPress Enter to return to menu.".format(int(canvas.size/2+4),canvas.size-8),end="") # display game over
+        print("\033[{};{}HPress Enter to return to menu.".format(int(canvas.size/2+4),canvas.size-8),end="")  # wait for conformation
         input()
         game_status = True
         gamemenu.mode = 0
 
-        anaconda.NewGame() # initialize snake class
+        save.SaveScores(canvas.score, canvas.size, canvas.name) # save score into json
+
+        anaconda.NewGame() # get ready for a new game
         canvas.NewGame()
+
+    if (gamemenu.mode == 2):
+        canvas.Erase() # clear screen
+        canvas.ScoreBoard()
+
+        print("\033[{};{}HPress Enter to return to menu.".format(2,canvas.size-8),end="")  # wait for conformation
+        input()
 
 
     

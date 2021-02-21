@@ -1,6 +1,8 @@
 
 import random 
 import os
+import save
+import operator
 
 class Display:
 
@@ -208,4 +210,18 @@ class Display:
         self.color = 2
         self.score = 0 # score of the game
         self.name = 'empty'
+
+    def ScoreBoard(self):
+        data = save.ReadScores()
+        print("\033[{};0H".format(5))
+ 
+        // implement sorting
+
+        // display scores
+      
+        # sorted_x = sorted(data, key=operator.attrgetter("score"))
+        
+        # data = sorted(data, key=lambda, score: data["score"])
+
+
 

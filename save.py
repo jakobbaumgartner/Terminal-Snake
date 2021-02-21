@@ -1,5 +1,4 @@
 import json
-import time
 
 def SaveScores(score, size, name):
     data = {}
@@ -18,4 +17,7 @@ def SaveScores(score, size, name):
 def ReadScores():
     with open('data.txt') as json_file:
         data = json.load(json_file)
+    
+    
+    return data
 

@@ -35,3 +35,10 @@ Tasks:
 
 6. Tail crossing
     - head on tail - dies
+
+
+TODO:
+
+1. implement score board
+2. implement three board sizes
+3. compile somehow to exe
