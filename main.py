@@ -12,7 +12,7 @@ import operator
 import display
 import snake
 import menu
-import save
+
 
 anaconda = snake.Snake() # initialize snake class
 canvas = display.Display() # initialize display class
@@ -37,17 +37,30 @@ while(program_status):
 
         if(input_key == '1'):
             gamemenu.mode = 1
+            canvas.__init__()
         
         if(input_key == '2'):
-            gamemenu.mode = 2
+            gamemenu.mode = 0
+            canvas.size = 8
+            canvas.__init__()
+
+        if(input_key == '3'):
+            gamemenu.mode = 0
+            canvas.size = 16
+            canvas.__init__()
+
+        if(input_key == '4'):
+            gamemenu.mode = 0
+            canvas.size = 32
+            canvas.__init__()
+
+       
     
     if (gamemenu.mode == 1):
         
         canvas.Erase() # clear screen
         canvas.DisplayBoard() # display board
-        print("\033[{};{}HEnter username:".format(int(canvas.size/2),canvas.size-2),end="") # display game over
-        print("\033[{};0H".format(canvas.size+5)) # move to the bottom of the screen
-        canvas.name = input()
+        
 
         canvas.Erase() # clear screen
         canvas.DisplayBoard() # display board
@@ -87,7 +100,7 @@ while(program_status):
         game_status = True
         gamemenu.mode = 0
 
-        save.SaveScores(canvas.score, canvas.size, canvas.name) # save score into json
+      
 
         anaconda.NewGame() # get ready for a new game
         canvas.NewGame()

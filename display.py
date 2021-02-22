@@ -1,8 +1,7 @@
 
 import random 
 import os
-import save
-import operator
+
 
 class Display:
 
@@ -11,11 +10,12 @@ class Display:
     food = [5,5,1] # food on the border, 1 - exists, 0 - eaten
     color = 2
     score = 0 # score of the game
-    name = ''
+
 
     def __init__(self):
         # runs on new object initialization
         
+        self.border_coordinates = []
         # add top border
         for element in range(self.size*2+4):
             self.border_coordinates.append([3,element+1])
@@ -199,8 +199,7 @@ class Display:
     def DisplayScore(self):
          print("\033[5;{}HPOINTS:".format(self.size*2 + 8),end="") # display score
          print("\033[7;{}H{}".format(self.size*2 + 8, self.score),end="") # display score
-         print("\033[10;{}HNAME:".format(self.size*2 + 8),end="") # display name
-         print("\033[12;{}H{}".format(self.size*2 + 8, self.name),end="") # display name
+      
 
          print("\033[{};0H".format(self.size+5))
      
@@ -209,19 +208,5 @@ class Display:
         self.food = [5,5,1] # food on the border, 1 - exists, 0 - eaten
         self.color = 2
         self.score = 0 # score of the game
-        self.name = 'empty'
-
-    def ScoreBoard(self):
-        data = save.ReadScores()
-        print("\033[{};0H".format(5))
- 
-        // implement sorting
-
-        // display scores
-      
-        # sorted_x = sorted(data, key=operator.attrgetter("score"))
-        
-        # data = sorted(data, key=lambda, score: data["score"])
-
 
 
